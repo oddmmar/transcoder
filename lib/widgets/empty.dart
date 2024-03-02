@@ -13,7 +13,10 @@ class Empty extends StatelessWidget {
           height: 200,
           width: 550,
           child: Center(
-            child: Text('Drop Media Files Here'),
+            child: Text(
+              'Drop Media Files Here!',
+              style: TextStyle(fontSize: 30),
+            ),
           ),
         ),
       ),

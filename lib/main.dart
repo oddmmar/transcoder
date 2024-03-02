@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:transcoder/common/color_schemes.g.dart';
+import 'package:transcoder/common/styling.dart';
 import 'package:window_size/window_size.dart';
 import 'package:transcoder/widgets/home_screen.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:transcoder/common/styling.dart';
 import 'package:transcoder/widgets/command_section.dart';
 
 import 'package:transcoder/widgets/drop_area.dart';
-import 'package:transcoder/widgets/home_page_divider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,12 +16,12 @@ class HomeScreen extends StatelessWidget {
       ),
       body: const Column(
         children: [
-          HomePageDivider(),
+          CustomDivider(dividerColor: Colors.grey),
           Expanded(
-            flex: 8,
+            flex: 7,
             child: DropArea(),
           ),
-          HomePageDivider(),
+          CustomDivider(dividerColor: Colors.grey),
           Expanded(
             flex: 1,
             child: CommandSEction(),

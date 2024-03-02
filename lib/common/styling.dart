@@ -67,3 +67,25 @@ const darkColorScheme = ColorScheme(
   outlineVariant: Color(0xFF49454F),
   scrim: Color(0xFF000000),
 );
+
+final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+  shape: ContinuousRectangleBorder(
+    borderRadius: BorderRadius.circular(10.0),
+  ),
+);
+
+class CustomDivider extends StatelessWidget {
+  const CustomDivider({super.key, required this.dividerColor});
+  final Color dividerColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 2),
+      child: Divider(
+        color: dividerColor,
+        height: 1,
+      ),
+    );
+  }
+}
