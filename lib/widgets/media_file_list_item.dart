@@ -14,13 +14,16 @@ class _MediaAssetListItemState extends State<MediaAssetListItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2),
+      padding: const EdgeInsets.symmetric(vertical: 0),
       child: Card(
         elevation: 2,
-        shadowColor: Colors.purple[900],
+        shadowColor: const Color.fromARGB(255, 115, 1, 109),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5),
+        ),
         child: SizedBox(
           height: 90,
-          width: 580,
+          width: 560,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Column(

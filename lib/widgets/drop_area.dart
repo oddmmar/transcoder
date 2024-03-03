@@ -19,28 +19,30 @@ class _DropAreaState extends State<DropArea> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 1),
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: DropTarget(
         onDragDone: (detail) async {
           for (final file in detail.files) {
-            debugPrint('${file.path} ${file.name}');
-          }
-          setState(() {
-            _list.addAll(detail.files);
+            // TODO: create a media asset
             MediaAsset ma = MediaAsset(
               originalSize: 1024.5,
               duration: 600,
               videoTracks: 1,
               audioTracks: 2,
               resolution: 1080,
-              originalName: detail.files.first.name,
-              sourcePath: '/some/path',
+              originalName: file.name,
+              sourcePath: file.path,
               destinationPath: '/some/destination/',
               extention: '.movi',
               engDate: DateTime.now(),
             );
             _mediaAssets.add(ma);
+            debugPrint('${file.path} ${file.name}');
+          }
+          setState(() {
+            _list.addAll(detail.files);
           });
         },
         child: SizedBox(

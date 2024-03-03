@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:transcoder/common/styling.dart';
-import 'package:transcoder/widgets/command_section.dart';
 
+import 'package:transcoder/common/styling.dart';
 import 'package:transcoder/widgets/drop_area.dart';
+import 'package:transcoder/widgets/command_section.dart';
+import 'package:transcoder/widgets/nav_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Archive Helper'),
+        // title: const Text('Archive Helper'),
         backgroundColor: Colors.black,
       ),
       body: const Column(
@@ -28,6 +29,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      drawer: const NavDrawer(),
     );
   }
 }
