@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:transcoder/common/styling.dart';
 import 'package:transcoder/widgets/drop_area.dart';
 import 'package:transcoder/widgets/command_section.dart';
-import 'package:transcoder/widgets/nav_drawer.dart';
+import 'package:transcoder/widgets/drawer/nav_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

@@ -1,0 +1,28 @@
+name: transcoder
+version: 1.0.0
+summary: Transcoder
+description: Archive helper to transcode media files for Aspera transfer
+
+confinement: strict
+base: core22
+grade: stable
+
+slots:
+  dbus-transcoder:
+    interface: dbus
+    bus: session
+    name: org.oddserv.transcoder 
+    
+apps:
+  trancoder:
+    command: transcoder
+    extensions: [gnome] # gnome includes the libraries required by flutter
+    plugs:
+    - network
+    slots:
+      - dbus-trancoder
+parts:
+  super-cool-app:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart # The main entry-point file of the application

@@ -46,7 +46,16 @@ dependencies:
   shared_preferences: ^2.2.2
   file_picker: ^6.2.0
   extended_text: ^13.0.0
-  # ffmpeg_kit_flutter: ^6.0.3
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  linux:
+    generate: true
+    image_path: "assets/images/icon-1024x1024.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/images/icon-1024x1024.png"
 
 dev_dependencies:
   flutter_test:
