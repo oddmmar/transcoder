@@ -6,7 +6,7 @@ class Empty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 200),
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: Card(
         elevation: 5,
         child: SizedBox(

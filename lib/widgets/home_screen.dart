@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
           CustomDivider(dividerColor: Colors.grey),
           Expanded(
             flex: 1,
-            child: CommandSEction(),
+            child: CommandSection(),
           ),
         ],
       ),

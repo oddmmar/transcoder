@@ -1,8 +1,10 @@
-import 'package:cross_file/cross_file.dart';
-import 'package:desktop_drop/desktop_drop.dart';
 import 'package:flutter/material.dart';
-import 'package:transcoder/models/media_aseet.dart';
+
+import 'package:cross_file/cross_file.dart';
 import 'package:transcoder/widgets/empty.dart';
+import 'package:desktop_drop/desktop_drop.dart';
+import 'package:transcoder/models/media_aseet.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:transcoder/widgets/media_file_list_item.dart';
 
 class DropArea extends StatefulWidget {
@@ -16,6 +18,18 @@ class _DropAreaState extends State<DropArea> {
   final Set<XFile> _list = {};
 
   final Set<MediaAsset> _mediaAssets = {};
+
+  void _getPrefs() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final List<String>? accels = prefs.getStringList('acceleration');
+    debugPrint('in nav -> ${accels.toString()}');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _getPrefs();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,14 +63,18 @@ class _DropAreaState extends State<DropArea> {
           height: double.infinity,
           width: double.infinity,
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-                if (_list.isEmpty)
-                  const Empty()
-                else
-                  for (var ma in _mediaAssets)
-                    MediaAssetListItem(mediaAsset: ma)
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  if (_list.isEmpty)
+                    const Empty()
+                  else
+                    for (var ma in _mediaAssets)
+                      MediaAssetListItem(mediaAsset: ma)
+                ],
+              ),
             ),
           ),
         ),

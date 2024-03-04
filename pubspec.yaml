@@ -41,6 +41,12 @@ dependencies:
   cupertino_icons: ^1.0.6
   desktop_drop: ^0.4.4
   cross_file: ^0.3.4+1
+  ffmpeg_cli: ^0.3.0
+  process_run: ^0.14.2
+  shared_preferences: ^2.2.2
+  file_picker: ^6.2.0
+  extended_text: ^13.0.0
+  # ffmpeg_kit_flutter: ^6.0.3
 
 dev_dependencies:
   flutter_test:

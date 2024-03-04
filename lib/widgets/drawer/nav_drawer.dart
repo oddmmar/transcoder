@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:transcoder/widgets/drawer/destination_picker.dart';
 
 class NavDrawer extends StatefulWidget {
   const NavDrawer({super.key});
@@ -10,6 +11,7 @@ class NavDrawer extends StatefulWidget {
 class _NavDrawerState extends State<NavDrawer> {
   final drawerItems = const Column(
     crossAxisAlignment: CrossAxisAlignment.start,
+    // mainAxisAlignment: MainAxisAlignment.start,
     children: [
       DrawerHeader(),
       DestinationChoice(),
@@ -34,7 +36,7 @@ class DrawerHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 58,
-      color: const Color.fromARGB(255, 17, 1, 45),
+      color: const Color.fromARGB(255, 51, 1, 54),
       child: const Center(
         child: Text(
           'Options',
@@ -44,54 +46,6 @@ class DrawerHeader extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-      ),
-    );
-  }
-}
-
-class Acceleration extends StatefulWidget {
-  const Acceleration({super.key});
-
-  @override
-  State<Acceleration> createState() => _AccelerationState();
-}
-
-class _AccelerationState extends State<Acceleration> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      child: const Column(
-        children: [
-          Text(
-            'ACCELERATION',
-            style: TextStyle(fontSize: 12),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class DestinationChoice extends StatefulWidget {
-  const DestinationChoice({super.key});
-
-  @override
-  State<DestinationChoice> createState() => _DestinationChoiceState();
-}
-
-class _DestinationChoiceState extends State<DestinationChoice> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      child: const Column(
-        children: [
-          Text(
-            'DESTINATION',
-            style: TextStyle(fontSize: 12),
-          )
-        ],
       ),
     );
   }
@@ -113,6 +67,30 @@ class _FormatChoiceState extends State<FormatChoice> {
         children: [
           Text(
             'FORMAT',
+            style: TextStyle(fontSize: 12),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class Acceleration extends StatefulWidget {
+  const Acceleration({super.key});
+
+  @override
+  State<Acceleration> createState() => _AccelerationState();
+}
+
+class _AccelerationState extends State<Acceleration> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      child: const Column(
+        children: [
+          Text(
+            'ACCELERATION',
             style: TextStyle(fontSize: 12),
           )
         ],
